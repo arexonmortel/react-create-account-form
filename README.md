@@ -1,6 +1,6 @@
 # Create Account Form UI Design
 
-![Create Account Form UI Design](sample_screenshotUI.png)
+![Create Account Form UI Design](./public/sample_screenshotUI.png)
 
 ## Description
 This project implements a Create Account form using React and Tailwind CSS. The form includes input fields for username, email, date of birth, password, confirm password, and a checkbox for agreeing to terms and conditions.

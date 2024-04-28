@@ -22,6 +22,10 @@ This project implements a Create Account form using React and Tailwind CSS. The 
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 
+## Testing
+
+You can test the live version of the Create Account form [here](https://react-create-account-form-coding-test.vercel.app/).
+
 ## Credits
 This project was created by Arexon Mortel as part of coding test. 
 

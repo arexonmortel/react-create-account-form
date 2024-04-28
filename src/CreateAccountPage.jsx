@@ -40,7 +40,7 @@ const CreateAccountPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     // Form validation
     const errors = {};
     if (formData.username.length < 4) {
@@ -58,24 +58,26 @@ const CreateAccountPage = () => {
     if (formData.password !== formData.confirmPassword) {
       errors.confirmPassword = 'Passwords do not match';
     }
-
+  
     if (Object.keys(errors).length === 0) {
       // No errors, submit the form
       console.log('Form Data:', formData);
+  
+      // Clear form errors
+      setFormErrors({
+        username: '',
+        email: '',
+        dateOfBirth: '',
+        password: '',
+        confirmPassword: '',
+      });
     } else {
       // Set form errors
       setFormErrors(errors);
     }
   };
+  
 
-  // Function to format date as "DD / MM / YYYY"
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day} / ${month} / ${year}`;
-  };
 
   return (
     <div className="max-w-md mx-auto p-4">
@@ -147,7 +149,7 @@ const CreateAccountPage = () => {
           alt={showPassword ? "Hide": "Show" } 
           onClick={handleTogglePassword} />
           </div>
-          {formErrors.password && <p className="text-error-color text-sm mt-1">{formErrors.password}</p>}
+          <p className={`text-sm mt-1 ${formErrors.password ? "text-error-color": "text-secondary-color" }`}>Password must contain at least 8 characters, 1 special symbol character, 1 number, and 1 uppercase letter</p>
         </div>
         {/* Confirm Password */}
         <div className="mb-6">
@@ -172,7 +174,7 @@ const CreateAccountPage = () => {
           {formErrors.confirmPassword && <p className="text-error-color text-sm mt-1">{formErrors.confirmPassword}</p>}
         </div>
         {/* Terms and Conditions Checkbox */}
-        <div className="mb-12">
+        <div className="mb-16">
           <label className="flex items-center gap-1">
             <input
               type="checkbox"
@@ -191,7 +193,7 @@ const CreateAccountPage = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="bg-link-color text-btn-text px-[20px] font-medium py-2 rounded-lg w-full disabled:bg-btn-color-disabled disabled:cursor-not-allowed"
+            className="bg-link-color text-btn-text px-[20px] font-medium py-3 rounded-lg w-full disabled:bg-btn-color-disabled disabled:cursor-not-allowed"
             disabled={!formData.username || !formData.email || !formData.dateOfBirth || !formData.password || !formData.confirmPassword || !formData.agreeToTerms}
           >
             Create Account

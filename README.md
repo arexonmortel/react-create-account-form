@@ -1,8 +1,28 @@
-# React + Vite
+# Create Account Form UI Design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Create Account Form UI Design](sample_screenshotUI.png)
 
-Currently, two official plugins are available:
+## Description
+This project implements a Create Account form using React and Tailwind CSS. The form includes input fields for username, email, date of birth, password, confirm password, and a checkbox for agreeing to terms and conditions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Responsive design for various screen sizes
+- Form validation for username length, date of birth, email format, and password complexity
+- Password toggle feature to show/hide password
+- Submit button disabled when form inputs are invalid
+- Link to login page
+- Links to terms of conditions and privacy policy
+
+## Technologies Used
+- React
+- Tailwind CSS
+
+## Usage
+1. Clone the repository: `git clone <repository-url>`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+## Credits
+This project was created by Arexon Mortel as part of coding test. 
+
+
